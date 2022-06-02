@@ -1,0 +1,11 @@
+.footer {
+    background-color: var(--color-background);
+
+    &__block {
+        @include flex-all-sa;
+    }
+
+    &__logo {
+        padding-top: 15px;
+    }
+}

@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-body);
+    text-align: justify;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+}
+
+.main {
+    min-height: 100vh;
+}
+
+.wrapper {
+    @include adaptive-value("padding-top", 100, 5, 0);
+    @include adaptive-value("margin-bottom", 100, 5, 0);
+}
+
+
