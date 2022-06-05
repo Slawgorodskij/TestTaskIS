@@ -3,24 +3,25 @@
 @section('content')
     <main class="main">
         <div class="container wrapper">
-            @foreach($collections as $collection)
-                <div class="collection">
-                    <div class="collection__item">
 
-                        <p>{{$collection['name']}}</p>
+            <div class="collection">
+                @foreach($collections as $collection)
+                    @if(!is_object($collection))
+                        <div class="collection__item">
 
-                    </div>
-                    @foreach($collection['products'] as $product)
+                            <p>{{$collection}}</p>
 
-                        <a class="collection__item" href="{{route('product', $product->id)}}">
-                            <p>{{$product->name}}</p>
-                            <p>{{$product->price}} рублей</p>
+                        </div>
+                    @else
+                        <a class="collection__item" href="{{route('product', $collection->id)}}">
+                            <p>{{$collection->name}}</p>
+                            <p>{{$collection->price}} рублей</p>
                         </a>
+                    @endif
+                @endforeach
+            </div>
 
-                    @endforeach
-                </div>
 
-            @endforeach
         </div>
     </main>
 @endsection
